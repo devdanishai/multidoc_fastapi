@@ -10,4 +10,4 @@ __pycache__/
 # Ignore large data files (if needed)
 *.bin
 *.sqlite3
-*.pdf
+
