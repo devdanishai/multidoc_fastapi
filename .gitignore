@@ -1,2 +1,13 @@
-.venv
-.env
+# Ignore IDE configurations
+.idea/
+
+# Ignore Python bytecode
+__pycache__/
+
+# Ignore virtual environment
+.venv/
+
+# Ignore large data files (if needed)
+*.bin
+*.sqlite3
+*.pdf
