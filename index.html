@@ -17,11 +17,12 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f5f5f5;
+            background: linear-gradient(120deg, #6a11cb, #2575fc);
+            min-height: 100vh;
         }
 
         .chat-container {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.95);
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             padding: 20px;
@@ -43,7 +44,7 @@
         }
 
         .user-message {
-            background-color: #007bff;
+            background-color: #6a11cb;
             color: white;
             margin-left: auto;
         }
@@ -68,22 +69,34 @@
 
         button {
             padding: 10px 20px;
-            background-color: #007bff;
+            background-color: #6a11cb;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+            transition: background-color 0.3s ease;
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color: #5a0cb1;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+
+        .blinking {
+            animation: blink 0.5s ease-in-out 3;
         }
 
         h1 {
             text-align: center;
-            color: #333;
+            color: white;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
     </style>
 </head>
@@ -93,13 +106,14 @@
         <div class="chat-messages" id="chatMessages"></div>
         <div class="input-container">
             <input type="text" id="userInput" placeholder="Ask AI..." />
-            <button onclick="sendMessage()">Send</button>
+            <button id="sendButton" onclick="sendMessage()">Send</button>
         </div>
     </div>
 
     <script>
         const chatMessages = document.getElementById('chatMessages');
         const userInput = document.getElementById('userInput');
+        const sendButton = document.getElementById('sendButton');
 
         userInput.addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
@@ -110,6 +124,14 @@
         async function sendMessage() {
             const message = userInput.value.trim();
             if (!message) return;
+
+            // Add blinking effect to button
+            sendButton.classList.add('blinking');
+
+            // Remove blinking effect after animation completes
+            setTimeout(() => {
+                sendButton.classList.remove('blinking');
+            }, 1500); // 1500ms = time for 3 blinks
 
             // Add user message to chat
             addMessage(message, 'user');
