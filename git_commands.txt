@@ -1,0 +1,15 @@
+#Change the Remote URL:
+git remote set-url origin https://github.com/devdanishai/multidoc_fastapi.git
+#Verify the Change:
+git remote -v
+#Push Your Changes
+git push -u origin master
+
+#set new info:
+git config --global user.name "devdanishai"
+git config --global user.email "global998877@gmail.com"
+
+#Verify the Changes
+git config --global user.name
+git config --global user.email
+
