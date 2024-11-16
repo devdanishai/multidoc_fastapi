@@ -1,0 +1,23 @@
+pip install -r requirements.txt
+uvicorn main:app --reload
+click on index.html file to open it.
+
+
+project_root/
+│
+├── data/                   # Place PDFs here
+│   └── (Add your PDF files here)
+│
+├── vector_db_dir/          # Empty directory for vector database files
+│
+├── .env                    # Environment variables file (for sensitive config like API keys)
+│
+├── index.html              # Frontend HTML file, if needed
+│
+├── main.py                 # Main FastAPI application file
+│
+├── vd.py                   # File for vector database functionality or configuration
+│
+├── requirements.txt        # List of dependencies for the project
+│
+└── README.md               # Project documentation
