@@ -3,11 +3,21 @@
 
 # Ignore Python bytecode
 __pycache__/
+*.pyc
+*.pyo
 
-# Ignore virtual environment
+# Ignore virtual environments
 .venv/
+venv/
+env/
 
 # Ignore large data files (if needed)
 *.bin
 *.sqlite3
+*.log
+*.dat
+*.tar.gz
 
+# Ignore system files
+.DS_Store
+Thumbs.db
