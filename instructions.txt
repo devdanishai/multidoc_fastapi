@@ -21,3 +21,14 @@ project_root/
 ├── requirements.txt        # List of dependencies for the project
 │
 └── README.md               # Project documentation
+
+
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/devdanishai/multidoc_fastapi.git
+git branch
+git push -u origin master
+git add .
+git commit -m "Save work before rebase"
+
