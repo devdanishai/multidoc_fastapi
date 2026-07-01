@@ -23,4 +23,4 @@ create these files
 5. create "vector_db_dir" keep it empty, vector db data will store in it automatically when code runs.
 6. run "pip install -r requireemnts.txt"
 7. run "uvicorn main:app --reload"
-2026-06-29
+2026-07-01
